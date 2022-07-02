@@ -14,9 +14,9 @@ after_success:
   - docker build -t sankarbv/multi-server ./server
   - docker build -t sankarbv/multi-worker ./worker
   # Log in to the docker CLI
-  -echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  docker push sankarbv/multi-client
-  docker push sankarbv/multi-nginx
-  docker push sankarbv/multi-server
-  docker push sankarbv/multi-worker
+  - docker push sankarbv/multi-client
+  - docker push sankarbv/multi-nginx
+  - docker push sankarbv/multi-server
+  - docker push sankarbv/multi-worker
