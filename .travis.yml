@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t sankarbv/react-test -f Dockerfile.dev .
+  - docker build -t sankarbv/react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true sankarbv/react-test npm test -- --coverage
